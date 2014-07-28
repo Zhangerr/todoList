@@ -53,8 +53,7 @@
 		font-family:"Segoe UI Light";
 	}
 	.strikethrough {
-		text-decoration: line-through;
-		
+		text-decoration: line-through;	
 	}
 	.selected {
 		background-color:#eee;
@@ -139,6 +138,7 @@
 	<script> 
 	//add backbone, mustache templating, firebase, or angular, use less, use require/common js, sass, prefix-free
 	//need an actual object backbone model
+	//per user todo lists
 		function deleteTask(){
  			$("li").click(function(){
  				var item = $(this)
@@ -162,7 +162,7 @@
 			})
 			base.on('child_changed', function(snapshot,prevSnap) {
 				var li = $("[data-id=" + snapshot.name() + "]")
-
+				//need better efficiency; move recreating label to after pressing enter instead of when child_changed, compare strings make sure it actually changed too 
 				li.html("<span class=\"trash\"></span><span class='todoItem'><input class='check' type=\"checkbox\" /><span class='taskText'></span></span>")
 				li.find('.taskText').text(snapshot.val().text);
 				if(snapshot.val().completed) {
@@ -201,8 +201,6 @@
 				var text = $(this).val();
 				var li = $(this).parent();
 				var id = li.attr('data-id');
-				var obj = {};
-				obj[id]=text;
 				base.child(id).child('text').set(text);
 			})
 			$('ul').on('click','.todoItem',function() {
@@ -210,9 +208,6 @@
 				var id = item.attr("data-id")
 				var completed = $(this).find('.taskText').hasClass("strikethrough");
 				base.child(id).child("completed").set(!completed)
-			//	item.find('.taskText').toggleClass("strikethrough")
-			//	item.toggleClass("selected");
-				//item.find(".check").prop('checked',$(this).find('.taskText').hasClass("strikethrough"))
 			});
 			$('ul').on('dblclick','li',function(e) {
 					var text = $(this).find('.taskText').text()
@@ -236,7 +231,6 @@
 			});
 	});
 	</script>
-
 </head>
 	<body>
 		<div class = 'test'>
@@ -255,8 +249,3 @@
 
 	</body>
 </html>
-
-
-
-
-
