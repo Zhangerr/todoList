@@ -1,0 +1,123 @@
+	h1,.footer {
+		background-color: #00CCFF;
+		color: white;
+		padding:0;
+		margin:0;
+		padding-top:10px;
+		padding-bottom:10px;
+		position:relative;
+		padding-left:20px;
+		padding-right:20px;
+	}
+	.center {
+		text-align:center;
+	}
+	li:hover{
+		background-color:#00CCFF;
+		border-left:8px solid rgb(200,200,200);
+		color:white;
+	}
+	li {
+		cursor:pointer;
+		border-bottom:1px solid rgb(220,220,220);
+		border-left:8px solid transparent;
+		-webkit-transition:all 0.25s;
+		-webkit-user-select:none;
+		box-sizing:border-box;
+	}
+	.newTask{
+		padding-top:5px;
+		padding-bottom:5px;
+		margin-left:5%;
+		margin-right:5%;
+		padding-left:5px;
+		padding-right:5px;
+		width:90%;
+		box-sizing:border-box;
+	}
+	li:last-child {
+		border-bottom:none;
+	}
+	ul {
+		list-style: none;
+		padding:0;
+		margin:0;
+	}
+	body {
+		font-family:"Segoe UI Light";
+	}
+	.strikethrough {
+		text-decoration: line-through;	
+	}
+	.selected {
+		background-color:#eee;
+	}
+	.hidden {
+		display:none;
+	}
+	.test {
+		padding:50px;
+	}
+	.button {
+		border-radius:5px;
+		border:none;
+		padding:5px;
+		cursor:pointer;
+		background-color:#ddd;
+		-webkit-transition:all 0.25s;
+		font-family:"Segoe UI Light";
+		outline-style:none;
+		box-shadow:0 0 2px #000;
+	}
+	.button:hover {
+		background-color:#eee;
+	}
+	.button:active {
+		background-color:#ddd;
+		box-shadow:0 0 5px #000 inset;
+	}
+	.button:focus {
+		
+	}
+	.trash {
+		visibility:hidden;
+	}
+	li:hover .trash{
+		visibility:visible;
+	}
+	.trash:hover {
+		text-shadow:0 1px 2px #FBFF91;
+	}
+	.trash::before {
+		content:"×";
+		font-size: 1.5em;
+	}
+	.check {
+		padding:2px;
+		padding-bottom:0;
+		height:20px;
+		position:relative;
+		top:4px;
+		width:20px;
+	}
+	.taskText {
+		font-size:24px;
+	}
+	.editTodo {
+		width:100%;
+		font-size:24px;
+		line-height: 2.2em;
+		outline:none;
+		padding:0;
+		border-style:none;
+		margin:0;
+		padding-left:8px;
+		box-sizing:border-box;
+
+	}
+	.editTodo:focus {
+		box-shadow:0 0 5px rgba(0,0,0,0.5) inset;
+	}
+	.todoItem {
+		line-height:3.7em;
+	}
