@@ -44,7 +44,7 @@
 		margin:0;
 	}
 	body {
-		font-family:"Segoe UI Light";
+		font-family:"Segoe UI Light", sans-serif;
 	}
 	.strikethrough {
 		text-decoration: line-through;	
@@ -65,7 +65,7 @@
 		cursor:pointer;
 		background-color:#ddd;
 		-webkit-transition:all 0.25s;
-		font-family:"Segoe UI Light";
+		font-family:"Segoe UI Light", sans-serif;
 		outline-style:none;
 		box-shadow:0 0 2px #000;
 	}
