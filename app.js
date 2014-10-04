@@ -1,6 +1,6 @@
 //add backbone, mustache templating, firebase, or angular, use less, use require/common js, sass, prefix-free, browserify, grunt, bower, handlebars
 	//need an actual object backbone model
-	//per user todo lists
+	//per user todo lists -> multiple todo lists per user
 		function deleteTask(){
  			$("li").click(function(){
  				var item = $(this)
